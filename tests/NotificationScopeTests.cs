@@ -1,4 +1,3 @@
-using Bllueprint.Core.Domain;
 using FluentAssertions;
 
 namespace Bllueprint.Core.Domain.Tests;
@@ -31,7 +30,10 @@ public class NotificationScopeTests
         using var outer = new NotificationScope();
         DomainNotifications.Current.Add("outer", "outer error");
 
-        using (new NotificationScope()) { /* inner scope */ }
+        using (new NotificationScope())
+        {
+            // this is intentionally empty so it simulates a scope dispose.
+        }
 
         DomainNotifications.Current.HasErrors.Should().BeTrue();
         DomainNotifications.Current.All[0].Message.Should().Be("outer error");
