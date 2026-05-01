@@ -3,13 +3,13 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Bllueprint.Core.Domain.Tests;
 
-public class BlueprintServiceCollectionExtensionsTests
+public class BllueprintServiceCollectionExtensionsTests
 {
     [Fact]
-    public void AddBlueprintDomainServices_ShouldRegisterINotificationContext()
+    public void AddBllueprintDomainServices_ShouldRegisterINotificationContext()
     {
         var services = new ServiceCollection();
-        services.AddBlueprintDomainServices();
+        services.AddBllueprintDomainServices();
 
         ServiceProvider provider = services.BuildServiceProvider();
         using IServiceScope scope = provider.CreateScope();
@@ -20,10 +20,10 @@ public class BlueprintServiceCollectionExtensionsTests
     }
 
     [Fact]
-    public void AddBlueprintDomainServices_ShouldRegisterAsScoped()
+    public void AddBllueprintDomainServices_ShouldRegisterAsScoped()
     {
         var services = new ServiceCollection();
-        services.AddBlueprintDomainServices();
+        services.AddBllueprintDomainServices();
 
         ServiceDescriptor? descriptor = services.FirstOrDefault(d => d.ServiceType == typeof(INotificationContext));
 
@@ -32,10 +32,10 @@ public class BlueprintServiceCollectionExtensionsTests
     }
 
     [Fact]
-    public void AddBlueprintDomainServices_ShouldSetDomainNotificationsCurrentToRegisteredInstance()
+    public void AddBllueprintDomainServices_ShouldSetDomainNotificationsCurrentToRegisteredInstance()
     {
         var services = new ServiceCollection();
-        services.AddBlueprintDomainServices();
+        services.AddBllueprintDomainServices();
 
         ServiceProvider provider = services.BuildServiceProvider();
         using IServiceScope scope = provider.CreateScope();
@@ -46,11 +46,11 @@ public class BlueprintServiceCollectionExtensionsTests
     }
 
     [Fact]
-    public void AddBlueprintDomainServices_ShouldReturnSameServiceCollection_ForChaining()
+    public void AddBllueprintDomainServices_ShouldReturnSameServiceCollection_ForChaining()
     {
         var services = new ServiceCollection();
 
-        IServiceCollection result = services.AddBlueprintDomainServices();
+        IServiceCollection result = services.AddBllueprintDomainServices();
 
         result.Should().BeSameAs(services);
     }

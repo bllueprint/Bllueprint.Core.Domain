@@ -2,9 +2,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Bllueprint.Core.Domain;
 
-public static class BlueprintServiceCollectionExtensions
+public static class BllueprintServiceCollectionExtensions
 {
-    public static IServiceCollection AddBlueprintDomainServices(
+    public static IServiceCollection AddBllueprintDomainServices(
         this IServiceCollection services)
     {
         services.AddScoped<INotificationContext>(sp =>

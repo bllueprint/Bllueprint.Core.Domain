@@ -1,4 +1,4 @@
-using Blueprint.Core.Domain;
+using Bllueprint.Core.Domain;
 
 namespace Bllueprint.Core.Domain;
 

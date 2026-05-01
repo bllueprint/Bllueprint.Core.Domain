@@ -1,4 +1,4 @@
-using Blueprint.Core.Domain;
+using Bllueprint.Core.Domain;
 using FluentAssertions;
 
 namespace Bllueprint.Core.Domain.Tests;
