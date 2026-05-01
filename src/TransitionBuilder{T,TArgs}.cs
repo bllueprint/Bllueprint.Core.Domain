@@ -1,4 +1,6 @@
-namespace Blueprint.Core.Domain;
+using Bllueprint.Core.Domain;
+
+namespace Bllueprint.Core.Domain;
 
 internal sealed class TransitionBuilder<T, TArgs> : ITransitionBuilder<T, TArgs>
 {

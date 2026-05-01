@@ -11,4 +11,7 @@
   <Folder Name="/src/">
     <Project Path="src/Bllueprint.Core.Domain.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Bllueprint.Core.Domain.Tests.csproj" />
+  </Folder>
 </Solution>

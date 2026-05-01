@@ -1,4 +1,4 @@
-namespace Blueprint.Core.Domain;
+namespace Bllueprint.Core.Domain;
 
 public enum NotificationKind
 {
