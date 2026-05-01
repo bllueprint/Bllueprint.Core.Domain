@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-namespace Blueprint.Core.Domain;
+namespace Bllueprint.Core.Domain;
 
 public abstract class Aggregate<T>
 where T : Aggregate<T>

@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-namespace Blueprint.Core.Domain;
+namespace Bllueprint.Core.Domain;
 
 internal sealed class Transition<T, TArgs> : ITransition<T, TArgs>
 {

@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Blueprint.Core.Domain;
+namespace Bllueprint.Core.Domain;
 
 public static class BlueprintServiceCollectionExtensions
 {
