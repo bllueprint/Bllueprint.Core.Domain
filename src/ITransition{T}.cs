@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 
 namespace Bllueprint.Core.Domain;
 
-public file interface ITransition<in T>
+public interface ITransition<in T>
 {
     void Invoke(T target, [CallerMemberName] string callerName = "");
 }
