@@ -1,12 +1,7 @@
 namespace Bllueprint.Core.Domain.Tests;
 
-sealed class Order : Aggregate<Order>
+internal sealed class Order : Aggregate<Order>
 {
-    public bool IsPaid { get; private set; }
-    public bool IsShipped { get; private set; }
-    public bool IsCancelled { get; private set; }
-    public string? TrackingNumber { get; private set; }
-
     private static readonly ITransition<Order> _pay =
         GetTransitionBuilder()
             .Requires(o => !o.IsPaid, "Order is already paid.")
@@ -33,11 +28,21 @@ sealed class Order : Aggregate<Order>
             })
             .Create();
 
-    public void Pay() => _pay.Invoke(this);
-    public void Cancel() => _cancel.Invoke(this);
-    public void Ship(string trackingNumber) => _ship.Invoke(this, trackingNumber);
+    public bool IsPaid { get; private set; }
 
-    public void RaiseViolation(string message) => AddViolationMessage(message);
+    public bool IsShipped { get; private set; }
+
+    public bool IsCancelled { get; private set; }
+
+    public string? TrackingNumber { get; private set; }
+
+    public static void RaiseViolation(string message) => AddViolationMessage(message);
+
+    public void Pay() => _pay.Invoke(this);
+
+    public void Cancel() => _cancel.Invoke(this);
+
+    public void Ship(string trackingNumber) => _ship.Invoke(this, trackingNumber);
 
     public void ForceShip() =>
         GetTransitionBuilder()

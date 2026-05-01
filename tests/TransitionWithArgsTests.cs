@@ -45,7 +45,7 @@ public class TransitionWithArgsTests : DomainTest
     [Fact]
     public void Invoke_WhenFirstGuardFails_ShouldNotEvaluateSecondGuard()
     {
-        var order = new Order(); // not paid AND empty tracking � only first guard fires
+        var order = new Order();
 
         order.Ship(string.Empty);
 
@@ -57,7 +57,7 @@ public class TransitionWithArgsTests : DomainTest
     {
         var order = new Order();
 
-        order.Ship("TRACK-001"); // fails: not paid
+        order.Ship("TRACK-001");
 
         Notifications.All.Should().ContainSingle()
             .Which.TransitionName.Should().Be("Ship");

@@ -15,13 +15,13 @@
         <None Remove="obj\**" />
     </ItemGroup>
     <ItemGroup>
-        <!-- <PackageReference Include="SonarAnalyzer.CSharp">
+        <PackageReference Include="SonarAnalyzer.CSharp">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="StyleCop.Analyzers">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference> -->
+        </PackageReference>
     </ItemGroup>
 </Project>
