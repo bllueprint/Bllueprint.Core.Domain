@@ -20,13 +20,15 @@ jobs:
         run: dotnet restore
 
       - name: Pack
-        run: dotnet pack src/Bllueprint.Core.Domain.csproj \
-               --configuration Release \
-               --no-restore \
-               --output ./nupkg
+        run: |
+          dotnet pack src/Bllueprint.Core.Domain.csproj \
+            --configuration Release \
+            --no-restore \
+            --output ./nupkg
 
       - name: Publish to NuGet
-        run: dotnet nuget push ./nupkg/*.nupkg \
-               --api-key ${{ secrets.NUGET_API_KEY }} \
-               --source https://api.nuget.org/v3/index.json \
-               --skip-duplicate
+        run: |
+          dotnet nuget push ./nupkg/*.nupkg \
+            --api-key ${{ secrets.NUGET_API_KEY }} \
+            --source https://api.nuget.org/v3/index.json \
+            --skip-duplicate
