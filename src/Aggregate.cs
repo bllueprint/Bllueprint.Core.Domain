@@ -5,6 +5,8 @@ namespace Bllueprint.Core.Domain;
 public abstract class Aggregate<T>
 where T : Aggregate<T>
 {
+    public Guid Id { get; protected set; }
+
     protected static ITransitionBuilder<T> GetTransitionBuilder() => new TransitionBuilder<T>();
 
     protected static ITransitionBuilder<T, TArgs> GetTransitionBuilder<TArgs>() => new TransitionBuilder<T, TArgs>();
