@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 
 namespace Bllueprint.Core.Domain;
 
-public abstract class Aggregate<T>
+public abstract class Aggregate<T> : IAggregate
 where T : Aggregate<T>
 {
     public Guid Id { get; protected set; }
